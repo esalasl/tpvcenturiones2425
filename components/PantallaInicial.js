@@ -23,12 +23,12 @@ const PantallaInicial = ({ navigation }) => {
       <Text style={styles.textoOpciones}>TPV-CENTURIONES</Text>
       </View>
       <View style={styles.grid}>
-        <BotonMesas numero={1} onSeleccionarMesa={seleccionarMesa} />
-        <BotonMesas numero={2} onSeleccionarMesa={seleccionarMesa} />
-        <BotonMesas numero={3} onSeleccionarMesa={seleccionarMesa} />
-        <BotonMesas numero={4} onSeleccionarMesa={seleccionarMesa} />
-        <BotonMesas numero={5} onSeleccionarMesa={seleccionarMesa} />
-        <BotonMesas numero={6} onSeleccionarMesa={seleccionarMesa} />
+        <BotonMesa numero={1} onSeleccionarMesa={seleccionarMesa} />
+        <BotonMesa numero={2} onSeleccionarMesa={seleccionarMesa} />
+        <BotonMesa numero={3} onSeleccionarMesa={seleccionarMesa} />
+        <BotonMesa numero={4} onSeleccionarMesa={seleccionarMesa} />
+        <BotonMesa numero={5} onSeleccionarMesa={seleccionarMesa} />
+        <BotonMesa numero={6} onSeleccionarMesa={seleccionarMesa} />
       </View>
     </View>
   );
