@@ -44,21 +44,32 @@ const PantallaMesa = ({ route, navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  pantallaInicial: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 100,
+    justifyContent: 'center', // Centra verticalmente
+    alignItems: 'center',     // Centra horizontalmente
   },
-  text: {
-    fontSize: 24,
+  opciones: {
+    marginBottom: 50, // Ajusta el margen para que no ocupe tanto espacio
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    width: '80%', // Ajusta el ancho del grid para centrar mejor
+  },
+  botonMesa: {
+    width: buttonWidth,
+    height: buttonWidth,
+    marginVertical: 10, // Añade margen vertical entre los botones
+  },
+  textoOpciones: {
+    fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 250,
-  },
-  buttonContainer: {
-    marginBottom: 15, // Espacio entre los botones
-    width: '80%', // Controla el ancho de los botones
+    color: 'white',
+    backgroundColor: 'red',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    textAlign: 'center',
   },
 });
-
-export default PantallaMesa;
