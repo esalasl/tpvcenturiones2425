@@ -22,7 +22,7 @@ const PantallaMesa = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Detalles de la Mesa {numeroMesa}</Text>
+      <Text style={styles.text}> {numeroMesa}</Text>
 
       {/* Botones de las opciones con margen entre ellos */}
       <View style={styles.buttonContainer}>
@@ -44,32 +44,21 @@ const PantallaMesa = ({ route, navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  pantallaInicial: {
+  container: {
     flex: 1,
-    justifyContent: 'center', // Centra verticalmente
-    alignItems: 'center',     // Centra horizontalmente
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 100,
   },
-  opciones: {
-    marginBottom: 50, // Ajusta el margen para que no ocupe tanto espacio
-  },
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    width: '80%', // Ajusta el ancho del grid para centrar mejor
-  },
-  botonMesa: {
-    width: buttonWidth,
-    height: buttonWidth,
-    marginVertical: 10, // Añade margen vertical entre los botones
-  },
-  textoOpciones: {
-    fontSize: 30,
+  text: {
+    fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
-    backgroundColor: 'red',
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    textAlign: 'center',
+    marginBottom: 250,
+  },
+  buttonContainer: {
+    marginBottom: 15, 
+    width: '80%', 
   },
 });
+
+export default PantallaMesa;
