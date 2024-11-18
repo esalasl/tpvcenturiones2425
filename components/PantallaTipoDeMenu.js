@@ -62,3 +62,5 @@ const estilos = StyleSheet.create({
     color: "#333",
   },
 });
+
+export default PantallaMenuTipo;
