@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Button, Text, StyleSheet, Dimensions } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
-const buttonWidth = screenWidth / 3 - 30;
+const buttonWidth = screenWidth / 3 - 30; 
 
 const BotonMesa = ({ numero, onSeleccionarMesa }) => {
   return (
