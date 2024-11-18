@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
+
+
 const PantallaMesa = ({ route, navigation }) => {
   const { numeroMesa } = route.params;
 
@@ -8,6 +10,7 @@ const PantallaMesa = ({ route, navigation }) => {
   const handleInsertar = () => {
     console.log(`Insertar en la mesa ${numeroMesa}`);
     // Aquí puedes agregar la lógica para insertar items en la mesa
+    
   };
 
   const handleComprobar = () => {

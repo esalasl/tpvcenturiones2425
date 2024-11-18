@@ -11,7 +11,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="PantallaInicial">
-        <Stack.Screen name="PantallaInicial" component={PantallaInicial} options={{ title: 'Mesas' }} />
+        <Stack.Screen name="PantallaInicial" component={PantallaInicial} options={{ title: 'Mesas ' }} />
         <Stack.Screen name="PantallaMesa" component={PantallaMesa} options={{ title: 'Detalle de la Mesa' }} />
       </Stack.Navigator>
     </NavigationContainer>
