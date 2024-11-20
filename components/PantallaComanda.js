@@ -1,31 +1,26 @@
 import React, { useState } from "react";
-import { View, Button, StyleSheet, Text } from "react-native";
+import { View, Button, StyleSheet, Text} from "react-native";
 
-export const PantallaComanda = () => {
-  const [seccionSeleccionada, setSeccionSeleccionada] = useState("");
 
   // opciones temporales
   const opciones = {
-    Entrantes: ["Teuqeño", "Nachos"],
+    Entrantes: ["Tequeño", "Nachos"],
     Primeros: ["Sopes", "Huaraches", "Tacos pastor"],
     Segundos: ["Burrito", "Enchilada", "Quesadilla"],
     Postres: ["Helado", "Tarta", "Crep con cajeta"],
     Bebidas: ["Aguas", "Cerveza", "Refresco", "Margarita"],
   };
 
-  const botonesDinamicos = opciones[seccionSeleccionada]?.map((item, index) => (
+
+export const PantallaComanda = ({ route, navigation }) => {
+  const { tipoComanda } = route.params;
+
+  const botonesDinamicos = opciones[tipoComanda]?.map((item, index) => (
     <Button key={index} title={item} onPress={() => alert(`Seleccionaste: ${item}`)} />
   ));
 
   return (
     <View style={estilos.contenedor}>
-      <View style={estilos.contenedorBotones}>
-        <Button title="Entrantes" onPress={() => setSeccionSeleccionada("Entrantes")} />
-        <Button title="Primeros" onPress={() => setSeccionSeleccionada("Primeros")} />
-        <Button title="Segundos" onPress={() => setSeccionSeleccionada("Segundos")} />
-        <Button title="Postres" onPress={() => setSeccionSeleccionada("Postres")} />
-        <Button title="Bebidas" onPress={() => setSeccionSeleccionada("Bebidas")} />
-      </View>
 
       <View style={estilos.contenedorDinamico}>
         {botonesDinamicos || <Text style={estilos.texto}>Selecciona una categoría</Text>}
@@ -76,3 +71,5 @@ const estilos = StyleSheet.create({
     backgroundColor: "#ddd",
   },
 });
+
+export default PantallaComanda;
