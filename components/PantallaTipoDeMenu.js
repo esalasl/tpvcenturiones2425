@@ -1,37 +1,21 @@
 import React, { useState } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 
-export const PantallaMenuTipo = () => {
-  const [seccionSeleccionada, setSeccionSeleccionada] = useState(""); 
- 
-  const mostrarContenido = () => {
-    switch (seccionSeleccionada) {
-      case "Entrantes":
-        return <Text style={estilos.textoContenido}>Entrantes</Text>;
-      case "Primeros":
-        return <Text style={estilos.textoContenido}>Primeros</Text>;
-      case "Segundos":
-        return <Text style={estilos.textoContenido}> Segundos</Text>;
-      case "Postres":
-        return <Text style={estilos.textoContenido}>Postres</Text>;
-      case "Bebidas":
-        return <Text style={estilos.textoContenido}>Bebidas</Text>;
-      default:
-        return <Text style={estilos.textoContenido}>Selecciona una categoria</Text>;
-    }
-  };
+//array de tipos de comida y recorrerlo cuando se haga click para mostrar mi pantalla
+const tipos = ["Entrantes", "Primeros", "Segundos", "Postres", "Bebidas"];
 
-  return (
+
+export const PantallaMenuTipo = ({ navigation }) => {
+  const [seccionSeleccionada, setSeccionSeleccionada] = useState(""); 
+
+return (
     <View style={estilos.contenedor}>
       <Text style={estilos.titulo}>Menú</Text>
       <View style={estilos.contenedorBotones}>
-        <Button title="Entrantes" onPress={() => setSeccionSeleccionada("Entrantes")} />
-        <Button title="Primeros" onPress={() => setSeccionSeleccionada("Primeros")} />
-        <Button title="Segundos" onPress={() => setSeccionSeleccionada("Segundos")} />
-        <Button title="Postres" onPress={() => setSeccionSeleccionada("Postres")} />
-        <Button title="Bebidas" onPress={() => setSeccionSeleccionada("Bebidas")} />
+        {tipos.map((tipo, index) =>
+          <Button key={index} title={tipo} onPress={() => navigation.navigate("PantallaComanda", { tipoComanda: tipo })} />
+          )}
       </View>
-      <View style={estilos.contenedorContenido}>{mostrarContenido()}</View>
     </View>
   );
 };
