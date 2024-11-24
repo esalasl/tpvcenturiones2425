@@ -6,17 +6,20 @@ import PantallaInicial from './components/PantallaInicial';
 import PantallaMesa from './components/PantallaMesa';
 import PantallaMenuTipo from './components/PantallaTipoDeMenu';
 import PantallaComanda from './components/PantallaComanda';
+import mesasRefact from './components/mesasRefact';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="PantallaInicial">
-        <Stack.Screen name="PantallaInicial" component={PantallaInicial} options={{ title: 'Mesas ' }} />
+      <Stack.Navigator initialRouteName="mesasRefact">
+        <Stack.Screen name="mesasRefact" component={mesasRefact} options={{ title: 'Mesas ' }} />
+        {/* <Stack.Screen name="PantallaInicial" component={PantallaInicial} options={{ title: 'Mesas ' }} /> */}
         <Stack.Screen name="PantallaMesa" component={PantallaMesa} options={{ title: 'Detalle de la Mesa' }} />
         <Stack.Screen name="PantallaMenuTipo" component={PantallaMenuTipo} options={{title: 'MENÚS'}}/>
         <Stack.Screen name="PantallaComanda" component={PantallaComanda} options={{title: 'Comanda'}}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
