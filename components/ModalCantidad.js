@@ -1,13 +1,24 @@
+// ModalCantidad
 import React, { useState } from 'react';
-import { Modal, View, Text, Button, TextInput, StyleSheet } from 'react-native';
+import { Modal, View, Text, Button, StyleSheet } from 'react-native';
 
 const ModalCantidad = ({ visible, onClose, onSubmit }) => {
-  const [cantidad, setCantidad] = useState('');
+  const [cantidad, setCantidad] = useState(0); // Inicializa la cantidad en 0
+
+  const aumentarCantidad = () => {
+    setCantidad(cantidad + 1); // Aumenta la cantidad en 1
+  };
+
+  const disminuirCantidad = () => {
+    if (cantidad > 0) {
+      setCantidad(cantidad - 1); // Disminuye la cantidad en 1 si es mayor que 0
+    }
+  };
 
   const handleSubmit = () => {
-    onSubmit(cantidad);
-    setCantidad('');
-    onClose();
+    onSubmit(cantidad); // Llama a la función onSubmit con la cantidad seleccionada
+    setCantidad(0); // Reinicia la cantidad
+    onClose(); // Cierra el modal
   };
 
   return (
@@ -20,13 +31,11 @@ const ModalCantidad = ({ visible, onClose, onSubmit }) => {
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
           <Text style={styles.title}>Selecciona la cantidad</Text>
-          <TextInput
-            style={styles.input}
-            keyboardType="numeric"
-            value={cantidad}
-            onChangeText={setCantidad}
-            placeholder="Cantidad"
-          />
+          <View style={styles.contadorContainer}>
+            <Button title="-" onPress={disminuirCantidad} />
+            <Text style={styles.cantidadTexto}>{cantidad}</Text>
+            <Button title="+" onPress={aumentarCantidad} />
+          </View>
           <Button title="Aceptar" onPress={handleSubmit} />
           <Button title="Cancelar" onPress={onClose} />
         </View>
@@ -53,14 +62,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 20,
   },
-  input: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
+  contadorContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 20,
   },
+  cantidadTexto: {
+    fontSize: 24,
+    marginHorizontal: 20,
+  },
 });
+
 
 export default ModalCantidad;
