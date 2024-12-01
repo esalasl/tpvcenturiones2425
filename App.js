@@ -7,6 +7,8 @@ import PantallaMesa from './components/PantallaMesa';
 import PantallaMenuTipo from './components/PantallaTipoDeMenu';
 import PantallaComanda from './components/PantallaComanda';
 import mesasRefact from './components/mesasRefact';
+import { AppProvider } from './components/contexto';
+
 
 const Stack = createStackNavigator();
 
