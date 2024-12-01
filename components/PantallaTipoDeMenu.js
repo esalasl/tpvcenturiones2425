@@ -1,20 +1,36 @@
 import React, { useState } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
-//array de tipos de comida y recorrerlo cuando se haga click para mostrar mi pantalla
+
 const tipos = ["Entrantes", "Primeros", "Segundos", "Postres", "Bebidas"];
 
+
+const imagenes = {
+  Entrantes: require('./img/entrante.webp'),
+  Primeros: require('./img/primeros.jpg'),
+  Segundos: require('./img/segundos.webp'),
+  Postres: require('./img/postres.png'),
+  Bebidas: require('./img/bebidas.png'),
+
+};
 
 export const PantallaMenuTipo = ({ navigation }) => {
   const [seccionSeleccionada, setSeccionSeleccionada] = useState(""); 
 
-return (
+  return (
     <View style={estilos.contenedor}>
       <Text style={estilos.titulo}>Menú</Text>
       <View style={estilos.contenedorBotones}>
-        {tipos.map((tipo, index) =>
-          <Button key={index} title={tipo} onPress={() => navigation.navigate("PantallaComanda", { tipoComanda: tipo })} />
-          )}
+        {tipos.map((tipo, index) => (
+          <TouchableOpacity
+            key={index}
+            style={estilos.boton}
+            onPress={() => navigation.navigate("PantallaComanda", { tipoComanda: tipo })}
+          >
+            <Image source={imagenes[tipo]} style={estilos.imagenBoton} />
+            <Text style={estilos.textoBoton}>{tipo}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
     </View>
   );
@@ -24,7 +40,8 @@ const estilos = StyleSheet.create({
   contenedor: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: "#f3f7bf",
+    
   },
   titulo: {
     fontSize: 24,
@@ -34,15 +51,22 @@ const estilos = StyleSheet.create({
   },
   contenedorBotones: {
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-around",
     marginBottom: 20,
   },
-  contenedorContenido: {
-    marginTop: 20,
+  boton: {
     alignItems: "center",
+    margin: 10,
   },
-  textoContenido: {
-    fontSize: 18,
+  imagenBoton: {
+    width: 120,
+    height: 120,
+    borderRadius: 10,
+  },
+  textoBoton: {
+    marginTop: 10,
+    fontSize: 16,
     color: "#333",
   },
 });
