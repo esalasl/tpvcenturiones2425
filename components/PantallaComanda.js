@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, Button, StyleSheet, Text} from "react-native";
+import { View, Button, StyleSheet, Text, Modal} from "react-native";
+import ModalCantidad from "./ModalCantidad";
 
 
   // opciones temporales
@@ -16,8 +17,17 @@ export const PantallaComanda = ({ route, navigation }) => {
   const { tipoComanda } = route.params;
 
   const botonesDinamicos = opciones[tipoComanda]?.map((item, index) => (
-    <Button key={index} title={item} onPress={() => alert(`Seleccionaste: ${item}`)} />
+    <Button key={index} title={item} onPress={() => 
+      alert(`Seleccionaste: ${item}`)
+    
+    } />
   ));
+
+  // Función que se llama al enviar la cantidad desde el modal
+  const handleCantidadSubmit = (cantidad) => {
+    setCantidadSeleccionada(cantidad); // Actualiza la cantidad seleccionada
+    alert(`Cantidad seleccionada: ${cantidad}`); // Muestra un mensaje de alerta con la cantidad seleccionada
+  };
 
   return (
     <View style={estilos.contenedor}>
