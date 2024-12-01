@@ -44,7 +44,7 @@ const estilos = StyleSheet.create({
   contenedor: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: "#f3f7bf",
     justifyContent: "space-between",
   },
   contenedorBotones: {
