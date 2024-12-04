@@ -10,13 +10,11 @@ const PantallaMesa = ({ route, navigation }) => {
   };
 
   const handleComprobar = () => {
-    console.log(`Comprobar la mesa ${numeroMesa}`);
-    // Aquí puedes agregar la lógica para comprobar la mesa
+    navigation.navigate("ComprobarComanda");
   };
 
   const handleCobrar = () => {
-    console.log(`Cobrar en la mesa ${numeroMesa}`);
-    // Aquí puedes agregar la lógica para cobrar en la mesa
+    
   };
 
   // El `return` debe estar aquí, dentro de la función PantallaMesa
@@ -49,6 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 100,
+    backgroundColor: "#f3f7bf"
   },
   text: {
     fontSize: 24,
