@@ -22,7 +22,7 @@ const RestaurantGrid = ({ rows, cols, imagenesRestaurante, mapaxDefecto }) => {
       activada === sillaInvertida ||
       activada === sillas
     ) {
-      navigation.navigate("PantallaMenuTipo", { mesa: { row, col } });
+      navigation.navigate("PantallaMesa", { mesa: { row, col } });
     }
   };
 
