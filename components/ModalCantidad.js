@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     width: 300,
-    padding: 20,
+    padding: 10,
+    justifyContent: 'space-around',
     backgroundColor: 'white',
     borderRadius: 10,
     alignItems: 'center',
