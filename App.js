@@ -1,7 +1,7 @@
-import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { MesasProvider } from "./components/MesasContext";
 import PantallaInicial from "./components/PantallaInicial";
 import PantallaMesa from "./components/PantallaMesa";
 import PantallaMenuTipo from "./components/PantallaTipoDeMenu";
@@ -14,6 +14,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
+feat/pantallaComprobarDefinitiva
     <AppProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="mesasRefact">
@@ -46,5 +47,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
     </AppProvider>
+
+   
   );
 }
