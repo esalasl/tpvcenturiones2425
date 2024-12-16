@@ -1,7 +1,7 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { MesasProvider } from "./components/MesasContext";
 import PantallaInicial from "./components/PantallaInicial";
 import PantallaMesa from "./components/PantallaMesa";
 import PantallaMenuTipo from "./components/PantallaTipoDeMenu";
@@ -9,12 +9,12 @@ import PantallaComanda from "./components/PantallaComanda";
 import mesasRefact from "./components/mesasRefact";
 import { AppProvider } from "./components/Context";
 import PantallaComprobar from "./components/PantallaComprobar";
+import PantallaCobrar from "./components/PantallaCobrar";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-feat/pantallaComprobarDefinitiva
     <AppProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="mesasRefact">
@@ -44,10 +44,14 @@ feat/pantallaComprobarDefinitiva
           component={PantallaComprobar}
           options={{ title: "Comprobar" }}
         />
+      <Stack.Screen
+          name="PantallaCobrar"
+          component={PantallaCobrar}
+          options={{ title: "Cobrar" }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
     </AppProvider>
-
-   
   );
 }

@@ -14,6 +14,7 @@ const PantallaMesa = ({ route, navigation }) => {
   };
 
   const handleCobrar = () => {
+    navigation.navigate("PantallaCobrar");
     
   };
 
