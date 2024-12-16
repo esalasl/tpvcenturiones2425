@@ -1,69 +1,60 @@
-
 import React from "react";
 import { View, Button, StyleSheet, Text } from "react-native";
+import { useContext } from "react";
+import MesasContext from "./MesasContext";
 
+const PantallaCobrar = ({ navigation }) => {
+  const { comanda, setComanda } = useContext(MesasContext);
 
-export const PantallaCobrar = ({ navigation,MesasProvider }) => {
   return (
-    <View style={estilos.contenedor}>
-      <View style={estilos.contenedorDinamico}>
-        <Text style={estilos.texto}> aqui iria el contexto de la comanda</Text>
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.text}>{comanda}</Text> 
+
+      
+      <View style={styles.spacer} />
+
+      
+      <Button
+        style={styles.botones}
+        title="Cobrar"
+        onPress={() => {setComanda("Comanda cobrada");}}
+      />
+
+      
+      <View style={styles.separacion} />
 
      
-
-      <View style={estilos.contenedorInferior}>
-        
-        <Button
-          title="Cobrar"
-          onPress={() => alert("Cobrar")} // Cambiar a la navegación hacia pantalla "Cobrar" cuando esté disponible
-        />
-      </View>
-
       <Button
+        style={styles.botones}
         title="ATRÁS"
         onPress={() => navigation.goBack()}
-        style={estilos.botonAtras}
       />
     </View>
   );
 };
 
-const estilos = StyleSheet.create({
-  contenedor: {
+const styles = StyleSheet.create({
+  container: {
     flex: 1,
     padding: 20,
     backgroundColor: "#f3f7bf",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",  
   },
-  contenedorDinamico: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  texto: {
+  text: {
     fontSize: 16,
     color: "#666",
     textAlign: "center",
   },
-  cantidadTexto: {
-    fontSize: 18,
-    color: "#333",
-    marginBottom: 20,
-    textAlign: "center",
+  spacer: {
+    flex: 1,  
   },
-  contenedorInferior: {
-    //flexDirection: "row",
-   //ustifyContent: "space-between",
-    marginBottom: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    height: 80,
+  separacion: {
+    marginVertical: 10, 
   },
-  botonAtras: {
-    marginTop: 10,
+  botones: {
+    marginBottom: 10,  
     backgroundColor: "#ddd",
+    borderRadius: 10,
   },
 });
 

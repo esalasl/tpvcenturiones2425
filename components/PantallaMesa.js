@@ -10,7 +10,7 @@ const PantallaMesa = ({ route, navigation }) => {
   };
 
   const handleComprobar = () => {
-    navigation.navigate("PantallaComprobrar");
+    navigation.navigate("PantallaComprobar");
   };
 
   const handleCobrar = () => {
