@@ -7,13 +7,14 @@ import PantallaMesa from "./components/PantallaMesa";
 import PantallaMenuTipo from "./components/PantallaTipoDeMenu";
 import PantallaComanda from "./components/PantallaComanda";
 import mesasRefact from "./components/mesasRefact";
-import { AppProvider } from "./components/contexto";
+import { AppProvider } from "./components/Context";
 import PantallaComprobar from "./components/PantallaComprobar";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
+    <AppProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="mesasRefact">
         <Stack.Screen
@@ -44,5 +45,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </AppProvider>
   );
 }

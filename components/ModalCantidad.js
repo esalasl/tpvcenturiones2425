@@ -36,8 +36,8 @@ const ModalCantidad = ({ visible, onClose, onSubmit }) => {
             <Text style={styles.cantidadTexto}>{cantidad}</Text>
             <Button title="+" onPress={aumentarCantidad} />
           </View>
-          <Button title="Aceptar" onPress={handleSubmit} />
-          <Button title="Cancelar" onPress={onClose} />
+          <Button style={styles.btnAbajo} title="Aceptar" onPress={handleSubmit} />
+          <Button style={styles.btnAbajo} title="Cancelar" onPress={onClose} />
         </View>
       </View>
     </Modal>
@@ -71,6 +71,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginHorizontal: 20,
   },
+  btnAbajo:{
+    justifyContent: "space-around",
+  }
 });
 
 
